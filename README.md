@@ -1,6 +1,6 @@
-
-
 # iMouse
+
+![image](https://github.com/ComputerSocietySPC/iMouse/assets/148703297/3b4f12ac-1664-472a-a5fe-e0608626bfd1)
 
 iMouse is a Python script that utilizes hand gestures for controlling the mouse cursor and performing various actions. It uses the MediaPipe library for hand tracking and OpenCV for capturing and processing video from the webcam.
 

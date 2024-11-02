@@ -1,3 +1,7 @@
+# iMouse is a script completely created by Christopher Wong, a student from St. Paul's College.
+# # Feel free to use this code in various projects.
+# iMouse Opt is a version that provides maximum performance and processing speed. It only shows the camera view in the cv2 window. (For a more powerful display, you can use iMouse_Pro.py) 
+
 import cv2
 import mediapipe as mp
 import pyautogui
@@ -121,7 +125,7 @@ with mp_hands.Hands(
                 middle_finger = hand_landmarks.landmark[mp_hands.HandLandmark.MIDDLE_FINGER_TIP]
                 middle_finger_dip = hand_landmarks.landmark[mp_hands.HandLandmark.MIDDLE_FINGER_DIP]
                 middle_finger_mcp = hand_landmarks.landmark[mp_hands.HandLandmark.MIDDLE_FINGER_MCP]
-               
+        
                 ring_finger = hand_landmarks.landmark[mp_hands.HandLandmark.RING_FINGER_TIP]
                 ring_finger_mcp = hand_landmarks.landmark[mp_hands.HandLandmark.RING_FINGER_MCP]
                 
@@ -143,7 +147,7 @@ with mp_hands.Hands(
                 else:
                     delta_y = 0
 
-                vel = vel*0.7
+                vel = vel*0.8
                 mouse.scroll(0,vel)
 
                 # Update the previous index finger y-coordinate
@@ -158,7 +162,7 @@ with mp_hands.Hands(
                 prev_index_finger_x = index_finger.x
 
                 if all_fingers_raised == True:
-                    if abs(delta_x) > 0.3:
+                    if abs(delta_x) > 0.25:
                         next_tab()
 
                 elif index_middle_distance < 0.1 and index_finger_is_straight == True:
@@ -200,8 +204,8 @@ with mp_hands.Hands(
                         )
                     
                 else:
-                    mouse_x = mouse_x + (index_finger_mcp.x * image.shape[1]*3.5 - 200 - mouse_x)*0.2
-                    mouse_y = mouse_y + (index_finger_mcp.y * image.shape[0]*3.5 - 300 - mouse_y)*0.2
+                    mouse_x = mouse_x + (index_finger_mcp.x * image.shape[1]*5 - 300 - mouse_x)*0.2
+                    mouse_y = mouse_y + (index_finger_mcp.y * image.shape[0]*5 - 300 - mouse_y)*0.2
                     
                     list_1 = [str(int(mouse_x)), str(int(mouse_y))] 
 
@@ -231,13 +235,13 @@ with mp_hands.Hands(
                         is_left_click = False
 
                     
-                    if index_finger_dip.y < index_finger.y:
-                        if is_right_click == False:
-                            right_click()
-                            is_right_click = True
+                    # if index_finger_dip.y < index_finger.y:
+                    #     if is_right_click == False:
+                    #         right_click()
+                    #         is_right_click = True
                     
-                    else:
-                        is_right_click = False
+                    # else:
+                    #     is_right_click = False
 
         # Display the image
         cv2.imshow("Hand Gestures", image)

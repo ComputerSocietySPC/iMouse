@@ -14,7 +14,7 @@ iMouse is a Python script that utilizes hand gestures for controlling the mouse 
 
 ## Our model series
 - `iMouse_Opt.py` is a version that provides maximum performance and processing speed. It only shows the camera view in the cv2 window.
-- `iMouse_Opt.py` is a version that provides a powerful display, providing real time data of the motion of the hand in the cv2 window.
+- `iMouse_Pro.py` is a version that provides a powerful display, providing real time data of the motion of the hand in the cv2 window.
 
 ## Requirements
 

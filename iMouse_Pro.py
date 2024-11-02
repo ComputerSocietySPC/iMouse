@@ -261,9 +261,10 @@ with mp_hands.Hands(
         resized_image = cv2.resize(image, (new_width, new_height))
         cv2.imshow("Hand Gestures", resized_image)
 
-        # if is_key_pressed('esc'):
-        #     break
-        if cv2.waitKey(1) == ord('q'):
+        # Exit the program if 'q' is pressed
+        if is_key_pressed('esc'):
+            break
+        if cv2.waitKey(1) == 27:
             break
 
         angle1 = (angle1 + angle_increment) % 360

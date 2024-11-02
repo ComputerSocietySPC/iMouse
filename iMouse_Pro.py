@@ -1,4 +1,6 @@
-
+# iMouse is a script completely created by Christopher Wong, a student from St. Paul's College.
+# # Feel free to use this code in various projects.
+# iMouse Pro is a version that provides a powerful display, providing real time data of the motion of the hand in the cv2 window. (For better performance, you can use iMouse_Opt.py) 
 
 import cv2
 import mediapipe as mp
@@ -247,7 +249,7 @@ with mp_hands.Hands(
                     cv2.circle(image, landmark, 2, (255, 255, 255), -1)
 
         image = draw_text(image, "iMouse", (30, 20), font2, (255, 255, 255))
-        image = draw_text(image, "FPS: " + str(60) + " | 位置: " + str(int(mouse_x)) + ", " + str(int(mouse_y)) + " | 速度: " + str(int(delta_x*delta_x*delta_y*delta_y*1000000000)/100) + "cm/s", (190, 28), font3)
+        image = draw_text(image, "位置: " + str(int(mouse_x)) + ", " + str(int(mouse_y)) + " | 速度: " + str(int(delta_x*delta_x*delta_y*delta_y*1000000000)/100) + "cm/s", (190, 28), font3)
         aspect_ratio = frame.shape[1] / frame.shape[0]
         if screen_width / screen_height > aspect_ratio:
             new_height = screen_height

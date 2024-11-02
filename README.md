@@ -24,13 +24,15 @@ iMouse is a Python script that utilizes hand gestures for controlling the mouse 
 - PyAutoGUI
 - pynput
 - keyboard
+- Pillow
+- numpy
 
 ## Installation
 
 1. Make sure you have Python 3.x installed on your system.
 2. Install the required Python packages by running the following command:
 ~~~
-pip install opencv-python mediapipe pyautogui pynput keyboard
+pip install opencv-python mediapipe pyautogui pynput keyboard Pillow numpy
 ~~~
 
 ## Usage
